@@ -1,0 +1,145 @@
+import { db } from '@/db';
+import { interviews } from '@/db/schema';
+
+async function main() {
+    const sampleInterviews = [
+        {
+            applicationId: 6,
+            title: 'Technical Screen',
+            date: '2024-01-15',
+            time: '10:00 AM',
+            interviewerName: 'Sarah Johnson',
+            type: 'Virtual',
+            status: 'scheduled',
+            createdAt: new Date().toISOString(),
+        },
+        {
+            applicationId: 6,
+            title: 'System Design Interview',
+            date: '2024-01-17',
+            time: '2:00 PM',
+            interviewerName: 'Michael Chen',
+            type: 'Virtual',
+            status: 'scheduled',
+            createdAt: new Date().toISOString(),
+        },
+        {
+            applicationId: 6,
+            title: 'Behavioral Interview',
+            date: '2024-01-19',
+            time: '11:30 AM',
+            interviewerName: 'Emily Rodriguez',
+            type: 'In-person',
+            status: 'scheduled',
+            createdAt: new Date().toISOString(),
+        },
+        {
+            applicationId: 7,
+            title: 'Coding Challenge',
+            date: '2024-01-16',
+            time: '9:00 AM',
+            interviewerName: 'David Kumar',
+            type: 'Virtual',
+            status: 'scheduled',
+            createdAt: new Date().toISOString(),
+        },
+        {
+            applicationId: 7,
+            title: 'Technical Screen',
+            date: '2024-01-18',
+            time: '3:30 PM',
+            interviewerName: 'Jennifer Martinez',
+            type: 'Virtual',
+            status: 'scheduled',
+            createdAt: new Date().toISOString(),
+        },
+        {
+            applicationId: 8,
+            title: 'Team Fit Interview',
+            date: '2024-01-20',
+            time: '1:00 PM',
+            interviewerName: 'Robert Thompson',
+            type: 'Virtual',
+            status: 'scheduled',
+            createdAt: new Date().toISOString(),
+        },
+        {
+            applicationId: 8,
+            title: 'Technical Screen',
+            date: '2024-01-22',
+            time: '10:30 AM',
+            interviewerName: 'Amanda Lee',
+            type: 'In-person',
+            status: 'scheduled',
+            createdAt: new Date().toISOString(),
+        },
+        {
+            applicationId: 8,
+            title: 'Final Round',
+            date: '2024-01-24',
+            time: '2:30 PM',
+            interviewerName: 'Christopher Davis',
+            type: 'Virtual',
+            status: 'scheduled',
+            createdAt: new Date().toISOString(),
+        },
+        {
+            applicationId: 9,
+            title: 'Behavioral Interview',
+            date: '2024-01-21',
+            time: '9:30 AM',
+            interviewerName: 'Lisa Anderson',
+            type: 'Virtual',
+            status: 'scheduled',
+            createdAt: new Date().toISOString(),
+        },
+        {
+            applicationId: 9,
+            title: 'System Design Interview',
+            date: '2024-01-23',
+            time: '4:00 PM',
+            interviewerName: 'James Wilson',
+            type: 'Virtual',
+            status: 'scheduled',
+            createdAt: new Date().toISOString(),
+        },
+        {
+            applicationId: 10,
+            title: 'Technical Screen',
+            date: '2024-01-25',
+            time: '11:00 AM',
+            interviewerName: 'Patricia Brown',
+            type: 'Virtual',
+            status: 'scheduled',
+            createdAt: new Date().toISOString(),
+        },
+        {
+            applicationId: 10,
+            title: 'Coding Challenge',
+            date: '2024-01-26',
+            time: '1:30 PM',
+            interviewerName: 'Kevin Garcia',
+            type: 'In-person',
+            status: 'scheduled',
+            createdAt: new Date().toISOString(),
+        },
+        {
+            applicationId: 10,
+            title: 'Final Round',
+            date: '2024-01-28',
+            time: '3:00 PM',
+            interviewerName: 'Michelle Taylor',
+            type: 'Virtual',
+            status: 'scheduled',
+            createdAt: new Date().toISOString(),
+        },
+    ];
+
+    await db.insert(interviews).values(sampleInterviews);
+    
+    console.log('✅ Interviews seeder completed successfully');
+}
+
+main().catch((error) => {
+    console.error('❌ Seeder failed:', error);
+});
